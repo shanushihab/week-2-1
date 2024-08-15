@@ -394,25 +394,31 @@
 						<div class="row">
 							<div class="form-group col-md-6 ">
 							  <label>First Name</label>
-							  <input type="text" class="form-control" id="name" placeholder="Enter First Name" name="fname">
+							  <input type="text" class="form-control" id="contact-name" onkeyup="validateName()" placeholder="Enter First Name" name="fname">
+								<span id="name-error"></span>
 							</div>
 							<div class="form-group col-md-6">
-							  <label>Last Name</label>
-							  <input type="text" class="form-control" id="name" placeholder="Enter Last Name" name="lname">
+							  <label>Subject</label>
+							  <input type="text" class="form-control" id=""  placeholder="Enter Subject" name="lname">
+							  
 							</div>
 							<div class="form-group col-md-6">
 							  <label>Phone No.</label>
-							  <input type="text" class="form-control" id="phone" placeholder="Enter Phone number" name="phone">
+							  <input type="text" class="form-control" id="contact-phone" onkeyup="validatePhone()" placeholder="Enter Phone number" name="phone">
+							  <span id="phone-error"></span>
 							</div>
 							<div class="form-group col-md-6">
 							  <label>Email</label>
-							  <input type="email" class="form-control" id="email" placeholder="Enter Email" name="emailAddress">
+							  <input type="email" class="form-control" id="contact-email" onkeyup="validateEmail()" placeholder="Enter Email" name="emailAddress">
+							  <span id="email-error"></span>
 							</div>
 							<div class="form-group col-12">
 							  <label>Message</label>
-							  <textarea name="issues" class="form-control" id="iq" placeholder="Enter Your Message Here" name="issues"></textarea>
+							  <textarea name="issues" class="form-control" id="contact-message" onkeyup="validateMessage()" placeholder="Enter Your Message Here" name="issues"></textarea>
+							  <span id="message-error"></span>
 							</div>				
-							<button type="submit" id="button" value="Send Email" class="btn btn-default">Submit </button>
+							<button type="submit" onclick="return validateForm()" id="button" value="Send Email" class="btn btn-default">Submit </button>
+							<span id="submit-error"></span>
 						</div>
 					</form>
 				</div>
