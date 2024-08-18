@@ -85,6 +85,7 @@ function validateForm(){
         setTimeout(function(){ submitError.style.display = 'none';}, 3000);
         return false;
     }
+    
 }
 
 
@@ -103,9 +104,21 @@ document.getElementById('form')
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
       btn.value = 'Send Email';
-      alert('Sent!');
+      alert('Your Details Successfully Submitted!');
+
+        // Clear form inputs after successful submission
+        document.getElementById('form').reset();
+      
+        // Optionally, you can also clear the error messages
+        nameError.innerHTML = '';
+        phoneError.innerHTML = '';
+        emailError.innerHTML = '';
+        messageError.innerHTML = '';
+      
     }, (err) => {
       btn.value = 'Send Email';
       alert(JSON.stringify(err));
     });
 });
+
+
